@@ -1,14 +1,13 @@
-import useLocalStorageKullan from './localStorageKullan';
 
+import localStorageKullan from './localStorageKullan';
+const geceModuAc = (initialValue) => {
+  const [geceModuAcik, setGeceModuAcik] = localStorageKullan(initialValue);
 
-const geceModuAc = (initialState) => {
-  const [geceModu, setGeceModu] = useLocalStorageKullan('darkMode',initialState);
-
-  const geceModuAcKapat = () => {
-    setGeceModu((prevGeceModu) => !prevGeceModu);
+  const toggleGeceModu = () => {
+    setGeceModuAcik(prevValue => !prevValue);
   };
 
-  return [geceModu, geceModuAcKapat];
+  return [geceModuAcik, toggleGeceModu];
 };
 
 export default geceModuAc;
