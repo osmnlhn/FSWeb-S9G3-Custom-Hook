@@ -1,7 +1,7 @@
 
 import localStorageKullan from './localStorageKullan';
-const geceModuAc = (initialValue) => {
-  const [geceModuAcik, setGeceModuAcik] = localStorageKullan(initialValue);
+const geceModuAc = () => {
+  const [geceModuAcik, setGeceModuAcik] = localStorageKullan();
 
   const toggleGeceModu = () => {
     setGeceModuAcik(prevValue => !prevValue);
